@@ -1,0 +1,109 @@
+/** é para resetar o arquivo, geralmente usamos apenas as duas primeiras propriedades, porém como iremos usar uma game-board, vamos usar o box-sizing: border-box*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Aqui estamos definindo as dimensões do game-board, usamos o position: relativo para que os elementos dentro da game-board respeitem as delimitações dela*/
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 207, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+/*Position absolute é para que nenhuma imagem interfira na outra, o bottom: 0 coloca o tubo (pipe) colado na parte de
+baixo do game-board. A propriedade right vai colocar o objeto na margem direita e o valor passado dentro dela vai ser
+quanto esse objeto vai se afastar da direita*/
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    animation: clouds-animation 4s infinite linear;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+
+}
+
+.score {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 20PX;
+	font-family: 'Press Start 2P', cursive;
+}
+
+.game-over {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+  }
+  
+.game-over.show {
+    display: block;
+  }
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50%{
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
