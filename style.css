@@ -26,7 +26,7 @@ quanto esse objeto vai se afastar da direita*/
     animation: pipe-animation 1.5s infinite linear;
 }
 
-.mario {
+.nonato {
     width: 150px;
     position: absolute;
     bottom: 0;
@@ -49,13 +49,14 @@ quanto esse objeto vai se afastar da direita*/
     position: absolute;
     top: 20px;
     right: 20PX;
-	font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive;
+    z-index: 9999;
 }
 
 .game-over {
     display: none;
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -63,11 +64,84 @@ quanto esse objeto vai se afastar da direita*/
     text-align: center;
     padding: 20px;
     border-radius: 10px;
+    color: #FF0039;
+    font-family: 'Super Plumber Brothers', sans-serif;
+    text-shadow: 3px 3px #000;
+    margin: 0;
     z-index: 9999;
-  }
-  
+}
+
 .game-over.show {
     display: block;
+}
+
+
+@font-face {
+    font-family: 'Super Plumber Brothers';
+    src: url("./fonte/Super\ Mario\ Bros.\ 2.ttf");
+}
+
+.start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+    color: #FF0039;
+    font-family: 'Super Plumber Brothers', sans-serif;
+    text-shadow: 3px 3px #000;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.start-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f00;
+    color: #fff;
+    cursor: pointer;
+}
+
+.instrucao {
+    position: absolute;
+    top: calc(50% + 110px);
+    left: calc(50% - 280px);
+    color: #000000;
+    text-shadow: 3px 3px  #f00;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .footer {
+    margin-top: 15px;
+  }
+
+  .footer p {
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      color: #282828;
+      margin: 0;
+      padding: 0;
+      margin: 20 0 0 0;
+  }
+  
+  .footer a {
+    color: rgb(128, 124, 124);
+    text-decoration: none;
+    cursor: pointer;
   }
 
 @keyframes pipe-animation {
@@ -84,15 +158,19 @@ quanto esse objeto vai se afastar da direita*/
     0% {
         bottom: 0;
     }
+
     40% {
         bottom: 180px;
     }
-    50%{
+
+    50% {
         bottom: 180px;
     }
+
     60% {
         bottom: 180px;
     }
+
     100% {
         bottom: 0;
     }
@@ -106,4 +184,60 @@ quanto esse objeto vai se afastar da direita*/
     to {
         right: 100%;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .pipe {
+        width: 50px;
+        position: absolute;
+        bottom: 0;
+        width: 80px;
+        animation: pipe-animation 5s infinite linear;
+    }
+}
+
+.nonato {
+    width: 150px;
+    position: absolute;
+    bottom: -10px;
+}
+
+.clouds {
+    width: 500px;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    70% {
+        bottom: 180px;
+    }
+
+    80% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+
 }

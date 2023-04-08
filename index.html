@@ -19,13 +19,29 @@
         <div class="score">Score <b>00</b></div>
         <img src="./imgs/clouds.png" class="clouds">
         <img src="./imgs/pipe.png" class="pipe">
-        <img src="./imgs/mario.gif" class="mario">
+        <img src="./imgs/corre-d.gif" class="nonato">
         <div class="game-over">
-            <h1>Game Over</h1>
-            <p>Your score: <span class="final-score"></span></p>
+            <h1 class="game-over">GAME OVER</h1>
+            <p class="gamer-over">Your score: <span class="final-score"></span></p>
+            <span class="restart-message">Pressione F5 para reiniciar</span>
         </div>
+        <div class="start">
+            <h1 class="start">
+                Nonato Bros
+                <br>World
+            </h1>
+            <div  class="instrucao">
+                <strong> PRESSIONE 'ARROW UP' (&#8593;) PARA INICIAR</strong>
+            </div>
+            <button class="start-button" hidden>Start</button>
+        </div>
+        <audio id="perdeu-music" src="./sounds/audio_audio-perdeu.wav"></audio>
+        <audio id="background-music" src="./sounds/audio_audio-principal.mp3" loop></audio>
     </div>
-
+    <div class="footer">
+        <p align="center">Coded by <a href="https://github.com/jairojrdv" target="_blank">Jairo Junior</a> &#xa9; 2023</p>
+    <br />
+    </div>
     <script src="main.js" defer></script>
 </body>
 
