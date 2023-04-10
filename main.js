@@ -26,7 +26,7 @@ const jump = () => {
 
     
     nonato.classList.add('jump');
-    nonato.src = './imgs/salto-d.png';
+    nonato.src = './imgs/salto-d.gif';
     nonato.style.width = '140px';
 
     setTimeout(() => {
